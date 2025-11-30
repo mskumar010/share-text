@@ -262,7 +262,7 @@ export default function HomePage() {
 											</div>
 											<div className="qr-container">
 												<img
-													src={generateQRCode(`${CLIENT_URL}/${uid}`)}
+													src={generateQRCode(`${CLIENT_URL}/view/${uid}`)}
 													alt="QR Code"
 													className="qr-image"
 												/>
