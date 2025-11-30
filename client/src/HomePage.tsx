@@ -65,20 +65,23 @@ const SERVER_URL='https://share-text-1wmi.onrender.com'
 			<header className="header">
 				<div className="container">
 					<div className="header-inner">
-						<div className="brand">
-							<div className="brand-icon">
-								<svg
-									width="20"
-									height="20"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="2">
-									<path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" />
-								</svg>
+						
+						<a href="https://share-txt-skm.vercel.app/">
+							<div className="brand">
+								<div className="brand-icon">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="2">
+										<path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" />
+									</svg>
+								</div>
+								<span className="brand-name">ShareText</span>
 							</div>
-							<span className="brand-name">ShareText</span>
-						</div>
+						</a>
 
 						<div className="header-right">
 							{/* <div className="status-pill">
@@ -322,4 +325,5 @@ const SERVER_URL='https://share-text-1wmi.onrender.com'
 		</div>
 	);
 }
+
 
