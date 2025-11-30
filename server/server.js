@@ -20,7 +20,8 @@ app.get('/', (req, res) => {
 });
 app.get('/view/:id', (req, res) => {
 	const reqId=req.params.id
-	const reqItem=messageList.find((item)=>item.id==reqId)
+	// const reqItem=messageList.find((item)=>item.id==reqId)
+	const reqItem = currentMessage;
 	res.send(reqItem);
 	console.log('sending :',reqItem);
 });

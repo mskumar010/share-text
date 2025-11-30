@@ -688,6 +688,11 @@ body {
   gap: 8px;
 }
 
+.history-item-wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .history-item {
   width: 100%;
   padding: 16px;
@@ -702,6 +707,44 @@ body {
 .history-item:hover {
   background: var(--glass-bg);
   transform: translateX(4px);
+}
+
+.history-copy-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  padding: 0;
+}
+
+.history-item-wrapper:hover .history-copy-btn {
+  opacity: 1;
+}
+
+.history-copy-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.history-copy-btn.copied {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+  opacity: 1;
 }
 
 .history-item-header {
