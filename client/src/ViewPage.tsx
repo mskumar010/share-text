@@ -21,6 +21,7 @@ export default function ViewPage() {
 	});
 	const { uid } = useParams<{ uid: string }>();
 	const abortControllerRef = useRef<AbortController | null>(null);
+const SERVER_URL='https://share-text-1wmi.onrender.com'
 
 	useEffect(() => {
 		if (isDarkMode) {
@@ -59,7 +60,7 @@ export default function ViewPage() {
 			setMessage(''); // Clear previous message
 
 			try {
-				const res = await axios.get(`http://localhost:9090/view/${uid}`, {
+				const res = await axios.get(`${SERVER_URL}/${uid}`, {
 					signal: abortControllerRef.current?.signal,
 				});
 
@@ -389,3 +390,4 @@ export default function ViewPage() {
 		</div>
 	);
 }
+
