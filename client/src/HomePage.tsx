@@ -231,7 +231,7 @@ export default function HomePage() {
 												<span>Shareable Link</span>
 											</div>
 											<div className="link-display">
-												textshare.app/{uniqueId}
+												https://share-txt-skm.vercel.app/view
 											</div>
 											<button className="btn-copy">
 												<svg
@@ -333,4 +333,5 @@ export default function HomePage() {
 		</div>
 	);
 }
+
 
