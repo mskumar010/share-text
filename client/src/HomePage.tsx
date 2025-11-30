@@ -52,7 +52,7 @@ export default function HomePage() {
 	async function sendMessage(msg: string) {
 		setIsLoading(true);
 		try {
-			const res = await axios.post('http://localhost:9090', {
+			const res = await axios.post('https://share-text-1wmi.onrender.com', {
 				message: msg,
 			});
 			console.log('POST:', res.data);
@@ -333,3 +333,4 @@ export default function HomePage() {
 		</div>
 	);
 }
+
