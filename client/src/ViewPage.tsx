@@ -60,7 +60,7 @@ const SERVER_URL='https://share-text-1wmi.onrender.com'
 			setMessage(''); // Clear previous message
 
 			try {
-				const res = await axios.get(`${SERVER_URL}/${uid}`, {
+				const res = await axios.get(`${SERVER_URL}/view/${uid}`, {
 					signal: abortControllerRef.current?.signal,
 				});
 
@@ -390,4 +390,5 @@ const SERVER_URL='https://share-text-1wmi.onrender.com'
 		</div>
 	);
 }
+
 
