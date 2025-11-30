@@ -108,19 +108,31 @@ const SERVER_URL='https://share-text-1wmi.onrender.com'
 						};
 
 						setHistory((prevHistory) => {
-							// Prevent duplicates - check if message already exists
-							const exists = prevHistory.some(
-								(item) => item.message === messageText
-							);
-							if (exists) {
-								return prevHistory;
+							// Only allow history tracking if uid matches localStorage key (per id)
+							const storedKey = `messageHistory_${uid}`;
+							let historyForThisId: HistoryItem[] = [];
+
+							// Try to read only history for this id
+							const raw = localStorage.getItem(storedKey);
+							if (raw) {
+								try {
+									historyForThisId = JSON.parse(raw);
+								} catch (e) {
+									historyForThisId = [];
+								}
 							}
 
-							const updatedHistory = [newItem, ...prevHistory].slice(0, 10);
-							localStorage.setItem(
-								'messageHistory',
-								JSON.stringify(updatedHistory)
+							// Prevent duplicates for this id
+							const exists = historyForThisId.some(
+								(item: HistoryItem) => item.message === messageText
 							);
+
+							if (exists) {
+								return historyForThisId;
+							}
+
+							const updatedHistory = [newItem, ...historyForThisId].slice(0, 10);
+							localStorage.setItem(storedKey, JSON.stringify(updatedHistory));
 							return updatedHistory;
 						});
 					}
@@ -392,6 +404,7 @@ const SERVER_URL='https://share-text-1wmi.onrender.com'
 		</div>
 	);
 }
+
 
 
 
